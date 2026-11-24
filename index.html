@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="QuickBrief – AI-powered text summarizer and regional language translator. Instantly summarize long articles and translate them into Hindi, Bengali, Tamil, and more." />
+  <meta name="keywords" content="AI summarizer, text summarizer, translator, Hindi, Bengali, Tamil, Gemini AI, QuickBrief" />
+  <meta name="author" content="QuickBrief Team" />
+  <meta property="og:title" content="QuickBrief – AI Text Summarizer & Regional Translator" />
+  <meta property="og:description" content="Summarize long content and translate to regional languages instantly with Gemini AI." />
+  <title>QuickBrief – AI Text Summarizer &amp; Regional Translator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Animated Background Blobs -->
+  <div class="bg-blobs" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <div class="nav-logo">
+        <div class="logo-icon" aria-hidden="true">
+          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="logoGrad" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#a855f7"/>
+                <stop offset="100%" stop-color="#06b6d4"/>
+              </linearGradient>
+            </defs>
+            <rect width="36" height="36" rx="10" fill="url(#logoGrad)" opacity="0.15"/>
+            <path d="M18 6L10 20h6l-2 10 12-16h-7l3-8H18z" fill="url(#logoGrad)"/>
+          </svg>
+        </div>
+        <span class="logo-text">Quick<span class="logo-accent">Brief</span></span>
+      </div>
+      <div class="nav-links">
+        <a href="#how-it-works" class="nav-link">How it Works</a>
+        <a href="#languages" class="nav-link">Languages</a>
+        <a href="#app" class="nav-cta" id="try-btn">Try Now</a>
+      </div>
+      <button class="hamburger" id="hamburger-btn" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <a href="#how-it-works" class="mobile-link">How it Works</a>
+      <a href="#languages" class="mobile-link">Languages</a>
+      <a href="#app" class="mobile-link mobile-cta">Try Now</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero" id="hero" role="banner">
+    <div class="hero-inner">
+      <div class="hero-badge">
+        <span class="badge-dot" aria-hidden="true"></span>
+        Powered by Google Gemini AI
+      </div>
+      <h1 class="hero-title">
+        Summarize &amp; Translate<br/>
+        <span class="gradient-text">Any Text Instantly</span>
+      </h1>
+      <p class="hero-subtitle">
+        Paste any long article, news, or study material. QuickBrief uses AI to generate a crisp summary and translates it into your preferred regional language — in seconds.
+      </p>
+      <div class="hero-actions">
+        <a href="#app" class="btn-primary" id="hero-cta">
+          <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 2L4 11h5l-1 7 8-11h-6l1-5H10z" fill="currentColor"/></svg>
+          Start Summarizing
+        </a>
+        <a href="#how-it-works" class="btn-secondary">See How It Works</a>
+      </div>
+      <div class="hero-stats" role="list">
+        <div class="stat-item" role="listitem">
+          <span class="stat-number" data-target="10">0</span><span class="stat-unit">+</span>
+          <span class="stat-label">Languages</span>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat-item" role="listitem">
+          <span class="stat-number" data-target="5">0</span><span class="stat-unit">s</span>
+          <span class="stat-label">Avg. Response</span>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat-item" role="listitem">
+          <span class="stat-number" data-target="100">0</span><span class="stat-unit">%</span>
+          <span class="stat-label">AI-Powered</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="floating-card card-left">
+        <div class="card-icon">📄</div>
+        <div class="card-lines">
+          <div class="line long"></div>
+          <div class="line medium"></div>
+          <div class="line short"></div>
+          <div class="line long"></div>
+          <div class="line medium"></div>
+        </div>
+      </div>
+      <div class="arrow-anim">
+        <svg viewBox="0 0 60 20" fill="none"><path d="M0 10 Q30 2 55 10" stroke="url(#arrowGrad)" stroke-width="2" stroke-dasharray="4 3"/><polygon points="55,6 60,10 55,14" fill="url(#arrowGrad)"/><defs><linearGradient id="arrowGrad"><stop offset="0%" stop-color="#a855f7"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient></defs></svg>
+      </div>
+      <div class="floating-card card-right">
+        <div class="card-icon">⚡</div>
+        <div class="card-lines">
+          <div class="line medium"></div>
+          <div class="line short"></div>
+          <div class="line medium"></div>
+        </div>
+        <div class="card-tag">Hindi ✓</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- How It Works -->
+  <section class="how-section" id="how-it-works" aria-labelledby="how-title">
+    <div class="section-inner">
+      <div class="section-label">Simple Process</div>
+      <h2 class="section-title" id="how-title">How QuickBrief Works</h2>
+      <p class="section-subtitle">Four simple steps from raw text to summarized translation</p>
+      <div class="steps-grid">
+        <div class="step-card" data-step="1">
+          <div class="step-num">01</div>
+          <div class="step-icon">📋</div>
+          <h3 class="step-title">Paste Your Text</h3>
+          <p class="step-desc">Copy and paste any long article, news report, or study material into the input box.</p>
+        </div>
+        <div class="step-connector" aria-hidden="true">→</div>
+        <div class="step-card" data-step="2">
+          <div class="step-num">02</div>
+          <div class="step-icon">🌐</div>
+          <h3 class="step-title">Select Language</h3>
+          <p class="step-desc">Choose your preferred regional language from Hindi, Bengali, Tamil, Telugu, and more.</p>
+        </div>
+        <div class="step-connector" aria-hidden="true">→</div>
+        <div class="step-card" data-step="3">
+          <div class="step-num">03</div>
+          <div class="step-icon">🤖</div>
+          <h3 class="step-title">AI Processes</h3>
+          <p class="step-desc">Google Gemini AI analyzes the text, generates a concise summary and accurate translation.</p>
+        </div>
+        <div class="step-connector" aria-hidden="true">→</div>
+        <div class="step-card" data-step="4">
+          <div class="step-num">04</div>
+          <div class="step-icon">✨</div>
+          <h3 class="step-title">Get Results</h3>
+          <p class="step-desc">View the English summary and regional translation side by side. Copy with one click.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Language Showcase -->
+  <section class="languages-section" id="languages" aria-labelledby="lang-title">
+    <div class="section-inner">
+      <div class="section-label">Multi-Language</div>
+      <h2 class="section-title" id="lang-title">Supported Regional Languages</h2>
+      <p class="section-subtitle">Translate summaries into the most widely spoken Indian and global languages</p>
+      <div class="lang-grid" role="list">
+        <div class="lang-card" role="listitem">
+          <span class="lang-flag">🇮🇳</span>
+          <span class="lang-name">Hindi</span>
+          <span class="lang-native">हिन्दी</span>
+        </div>
+        <div class="lang-card" role="listitem">
+          <span class="lang-flag">🇮🇳</span>
+          <span class="lang-name">Bengali</span>
+          <span class="lang-native">বাংলা</span>
+        </div>
+        <div class="lang-card" role="listitem">
+          <span class="lang-flag">🇮🇳</span>
+          <span class="lang-name">Tamil</span>
+          <span class="lang-native">தமிழ்</span>
+        </div>
+        <div class="lang-card" role="listitem">
+          <span class="lang-flag">🇮🇳</span>
+          <span class="lang-name">Telugu</span>
+          <span class="lang-native">తెలుగు</span>
+        </div>
+        <div class="lang-card" role="listitem">
+          <span class="lang-flag">🇮🇳</span>
+          <span class="lang-name">Marathi</span>
+          <span class="lang-native">मराठी</span>
+        </div>
+        <div class="lang-card" role="listitem">
+          <span class="lang-flag">🇮🇳</span>
+          <span class="lang-name">Gujarati</span>
+          <span class="lang-native">ગુજરાતી</span>
+        </div>
+        <div class="lang-card" role="listitem">
+          <span class="lang-flag">🇮🇳</span>
+          <span class="lang-name">Kannada</span>
+          <span class="lang-native">ಕನ್ನಡ</span>
+        </div>
+        <div class="lang-card" role="listitem">
+          <span class="lang-flag">🇮🇳</span>
+          <span class="lang-name">Malayalam</span>
+          <span class="lang-native">മലയാളം</span>
+        </div>
+        <div class="lang-card" role="listitem">
+          <span class="lang-flag">🇮🇳</span>
+          <span class="lang-name">Punjabi</span>
+          <span class="lang-native">ਪੰਜਾਬੀ</span>
+        </div>
+        <div class="lang-card" role="listitem">
+          <span class="lang-flag">🌍</span>
+          <span class="lang-name">Urdu</span>
+          <span class="lang-native">اردو</span>
+        </div>
+        <div class="lang-card" role="listitem">
+          <span class="lang-flag">🌍</span>
+          <span class="lang-name">French</span>
+          <span class="lang-native">Français</span>
+        </div>
+        <div class="lang-card" role="listitem">
+          <span class="lang-flag">🌍</span>
+          <span class="lang-name">Spanish</span>
+          <span class="lang-native">Español</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main App Section -->
+  <section class="app-section" id="app" aria-labelledby="app-title">
+    <div class="section-inner">
+      <div class="section-label">Try It Now</div>
+      <h2 class="section-title" id="app-title">QuickBrief AI Engine</h2>
+      <p class="section-subtitle">Paste your text below and experience AI-powered summarization and translation</p>
+
+      <div class="app-container" role="main">
+        <!-- Input Panel -->
+        <div class="input-panel glass-card">
+          <div class="panel-header">
+            <div class="panel-title">
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="2" y="3" width="16" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M5 7h10M5 10h7M5 13h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              Input Text
+            </div>
+            <button class="clear-btn" id="clear-btn" aria-label="Clear input text">Clear</button>
+          </div>
+
+          <div class="textarea-wrapper">
+            <textarea
+              id="input-text"
+              class="main-textarea"
+              placeholder="Paste your article, news report, or any long text here..."
+              aria-label="Enter text to summarize and translate"
+              maxlength="20000"
+              spellcheck="true"
+            ></textarea>
+            <div class="char-counter" id="char-counter" aria-live="polite">0 / 20,000</div>
+          </div>
+
+          <!-- Sample texts -->
+          <div class="sample-section">
+            <span class="sample-label">Try a sample:</span>
+            <div class="sample-buttons">
+              <button class="sample-btn" data-sample="science" aria-label="Load science sample text">🔬 Science</button>
+              <button class="sample-btn" data-sample="news" aria-label="Load news sample text">📰 News</button>
+              <button class="sample-btn" data-sample="tech" aria-label="Load tech sample text">💻 Technology</button>
+            </div>
+          </div>
+
+          <!-- Controls -->
+          <div class="controls-row">
+            <div class="control-group">
+              <label for="target-language" class="control-label">Target Language</label>
+              <div class="select-wrapper">
+                <select id="target-language" class="lang-select" aria-label="Select target language for translation">
+                  <option value="Hindi">🇮🇳 Hindi (हिन्दी)</option>
+                  <option value="Bengali">🇮🇳 Bengali (বাংলা)</option>
+                  <option value="Tamil">🇮🇳 Tamil (தமிழ்)</option>
+                  <option value="Telugu">🇮🇳 Telugu (తెలుగు)</option>
+                  <option value="Marathi">🇮🇳 Marathi (मराठी)</option>
+                  <option value="Gujarati">🇮🇳 Gujarati (ગુજરાતી)</option>
+                  <option value="Kannada">🇮🇳 Kannada (ಕನ್ನಡ)</option>
+                  <option value="Malayalam">🇮🇳 Malayalam (മലയാളം)</option>
+                  <option value="Punjabi">🇮🇳 Punjabi (ਪੰਜਾਬੀ)</option>
+                  <option value="Urdu">🌍 Urdu (اردو)</option>
+                  <option value="French">🌍 French (Français)</option>
+                  <option value="Spanish">🌍 Spanish (Español)</option>
+                  <option value="German">🌍 German (Deutsch)</option>
+                  <option value="Arabic">🌍 Arabic (العربية)</option>
+                  <option value="Japanese">🌍 Japanese (日本語)</option>
+                </select>
+                <svg class="select-arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              </div>
+            </div>
+            <div class="control-group">
+              <label for="summary-length" class="control-label">Summary Length</label>
+              <div class="select-wrapper">
+                <select id="summary-length" class="lang-select" aria-label="Select summary length">
+                  <option value="short">Short (2-3 sentences)</option>
+                  <option value="medium" selected>Medium (1 paragraph)</option>
+                  <option value="detailed">Detailed (3-4 paragraphs)</option>
+                </select>
+                <svg class="select-arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              </div>
+            </div>
+          </div>
+
+          <button class="process-btn" id="process-btn" aria-label="Summarize and translate text">
+            <span class="btn-text">
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 2L4 11h5l-1 7 8-11h-6l1-5H10z" fill="currentColor"/></svg>
+              Summarize &amp; Translate
+            </span>
+            <span class="btn-loading" aria-hidden="true">
+              <span class="spinner"></span>
+              Processing...
+            </span>
+          </button>
+        </div>
+
+        <!-- Output Panel -->
+        <div class="output-panel" id="output-panel" aria-live="polite" aria-label="AI generated results">
+          <!-- Placeholder state -->
+          <div class="output-placeholder" id="output-placeholder">
+            <div class="placeholder-icon" aria-hidden="true">
+              <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="40" cy="40" r="38" stroke="url(#phGrad)" stroke-width="2" stroke-dasharray="6 4"/>
+                <path d="M28 32h24M28 40h16M28 48h20" stroke="url(#phGrad)" stroke-width="2.5" stroke-linecap="round"/>
+                <path d="M50 55l5 5 8-10" stroke="#06b6d4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <defs><linearGradient id="phGrad" x1="0" y1="0" x2="80" y2="80" gradientUnits="userSpaceOnUse"><stop stop-color="#a855f7"/><stop offset="1" stop-color="#06b6d4"/></linearGradient></defs>
+              </svg>
+            </div>
+            <h3 class="placeholder-title">Your Results Will Appear Here</h3>
+            <p class="placeholder-desc">Paste your text, choose a language, and click <strong>Summarize &amp; Translate</strong> to get started.</p>
+          </div>
+
+          <!-- Results -->
+          <div class="results-container" id="results-container" hidden>
+            <div class="result-meta" id="result-meta"></div>
+            <div class="results-grid">
+              <!-- English Summary -->
+              <div class="result-card" id="summary-card">
+                <div class="result-card-header">
+                  <div class="result-card-title">
+                    <span class="result-flag" aria-hidden="true">🇬🇧</span>
+                    English Summary
+                  </div>
+                  <button class="copy-btn" id="copy-summary-btn" aria-label="Copy English summary to clipboard" data-target="summary-text">
+                    <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="6" y="6" width="11" height="13" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M3 14V3h11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    Copy
+                  </button>
+                </div>
+                <div class="result-content" id="summary-text" aria-label="English summary result"></div>
+                <div class="result-card-footer">
+                  <span class="word-count" id="summary-word-count"></span>
+                </div>
+              </div>
+
+              <!-- Translation -->
+              <div class="result-card" id="translation-card">
+                <div class="result-card-header">
+                  <div class="result-card-title">
+                    <span class="result-flag" id="trans-flag" aria-hidden="true">🌐</span>
+                    <span id="trans-lang-label">Translation</span>
+                  </div>
+                  <button class="copy-btn" id="copy-trans-btn" aria-label="Copy translation to clipboard" data-target="translation-text">
+                    <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="6" y="6" width="11" height="13" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M3 14V3h11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    Copy
+                  </button>
+                </div>
+                <div class="result-content" id="translation-text" aria-label="Translated summary result"></div>
+                <div class="result-card-footer">
+                  <span class="word-count" id="trans-word-count"></span>
+                </div>
+              </div>
+            </div>
+            <!-- Key Points -->
+            <div class="key-points-card glass-card" id="key-points-card">
+              <div class="key-points-header">
+                <span>🎯</span> Key Points Extracted
+              </div>
+              <ul class="key-points-list" id="key-points-list" aria-label="Key points from the text"></ul>
+            </div>
+          </div>
+
+          <!-- Error state -->
+          <div class="error-state" id="error-state" hidden>
+            <div class="error-icon" aria-hidden="true">⚠️</div>
+            <h3 class="error-title">Something went wrong</h3>
+            <p class="error-desc" id="error-message"></p>
+            <button class="retry-btn" id="retry-btn" aria-label="Retry the request">Try Again</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features-section" id="features" aria-labelledby="features-title">
+    <div class="section-inner">
+      <div class="section-label">Why QuickBrief</div>
+      <h2 class="section-title" id="features-title">Built for Speed &amp; Accuracy</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon-wrap" style="--icon-color: #a855f7;">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-14h-9l1-6z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="feature-title">Lightning Fast</h3>
+          <p class="feature-desc">Get your summary and translation in under 5 seconds powered by Gemini's fastest models.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon-wrap" style="--icon-color: #06b6d4;">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20" stroke="currentColor" stroke-width="2"/></svg>
+          </div>
+          <h3 class="feature-title">12+ Languages</h3>
+          <p class="feature-desc">Support for major Indian regional languages and global languages with accurate translations.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon-wrap" style="--icon-color: #f59e0b;">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="feature-title">Key Points</h3>
+          <p class="feature-desc">Automatically extracts the most important bullet points from your text for quick scanning.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon-wrap" style="--icon-color: #10b981;">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/></svg>
+          </div>
+          <h3 class="feature-title">Side-by-Side View</h3>
+          <p class="feature-desc">Compare the English summary and regional translation simultaneously for best comprehension.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon-wrap" style="--icon-color: #ec4899;">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="6" y="6" width="13" height="15" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 16V3h13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="feature-title">One-Click Copy</h3>
+          <p class="feature-desc">Copy either the summary or translation to your clipboard instantly with a single click.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon-wrap" style="--icon-color: #f97316;">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3c-1.5 0-3 .5-4 1.5L4 8l-.5 1.5L5 11l1.5-.5L10 7l-.5 2.5 2 2 2.5-.5L17 13l.5 1.5L19 16l1.5-.5.5-1.5-3.5-3.5C18.5 9.5 19 8 19 6.5A4.5 4.5 0 0012 3z" stroke="currentColor" stroke-width="2"/></svg>
+          </div>
+          <h3 class="feature-title">Adjustable Length</h3>
+          <p class="feature-desc">Choose between short, medium, or detailed summaries depending on your use case.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="nav-logo">
+          <div class="logo-icon" aria-hidden="true">
+            <svg viewBox="0 0 36 36" fill="none"><defs><linearGradient id="footerGrad" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#a855f7"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient></defs><rect width="36" height="36" rx="10" fill="url(#footerGrad)" opacity="0.15"/><path d="M18 6L10 20h6l-2 10 12-16h-7l3-8H18z" fill="url(#footerGrad)"/></svg>
+          </div>
+          <span class="logo-text">Quick<span class="logo-accent">Brief</span></span>
+        </div>
+        <p class="footer-tagline">Making information accessible to everyone through AI.</p>
+      </div>
+      <div class="footer-info">
+        <p>Powered by <strong>Google Gemini AI</strong></p>
+        <p class="footer-credit">Built with ❤️ for accessible information</p>
+        <p class="footer-note">© 2026 QuickBrief. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast notification -->
+  <div class="toast" id="toast" role="alert" aria-live="assertive" aria-atomic="true"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
